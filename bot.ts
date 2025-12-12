@@ -7,7 +7,7 @@ const postData = async () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({"content":"@everyone what did you work on today? Send a link of your contributions."});
+      body: JSON.stringify({"content":"@everyone what did you work on today? Send a link of your contributions."})
     });
  
     if (!response.ok) {
@@ -15,7 +15,7 @@ const postData = async () => {
     }
  
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
   } catch (error) {
     console.error('Error:', error);
   }
