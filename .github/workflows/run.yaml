@@ -1,0 +1,30 @@
+
+name: Run the bot
+
+on: 
+  #push 
+  workflow_dispatch: # this is a nice option that will enable a button w/ inputs
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)    
+        required: false
+  schedule:
+    - cron:  '30 10 * * *'
+
+
+jobs:
+  hit-api:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo content
+      uses: actions/checkout@v2 # checkout the repository content to github runner.
+    - name: setup bun
+      uses: oven-sh/setup-bun@v2
+        
+    - name: run the script
+      #shell: bash
+      run: bun bot.ts
+        
+      env:
+        URL: ${{ secrets.WEBHOOK_URL }}
+
