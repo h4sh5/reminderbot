@@ -9,7 +9,7 @@ on:
         description: Git Ref (Optional)    
         required: false
   schedule:
-    - cron:  '30 10 * * *'
+    - cron:  '0 0 * * *'
 
 
 jobs:

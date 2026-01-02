@@ -7,7 +7,7 @@ const postData = async () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({"content":"@everyone what did you work on today? Send a link of your contributions."})
+      body: JSON.stringify({"content":"@everyone Remember to make a commit today! And send the link here if needed."})
     });
  
     if (!response.ok) {
